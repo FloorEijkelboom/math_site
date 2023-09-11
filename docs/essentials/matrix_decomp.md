@@ -45,7 +45,7 @@ $$
 The last equation follows from the fact that $$\mathbf{P}^{-1} \mathbf{P} = \mathbf{I}$$ for each intermediate term. Therefore, in this decomposition, we just need to calculate 3 matrix multiplications instead of $$n$$ multiplications, since the matrix $$\mathbf{D}^n$$ is still a diagonal matrix whose elements are raised to the $$n$$-th power[^2].
 
 
-## Singular Value Decomposition}\label{sec:SVD}
+## Singular Value Decomposition
 Another common type of matrix decomposition is Singular Value Decomposition, or often abbreviated as SVD. The main idea is to generalize the eigendecomposition to non-square matrices. Let's assume that matrix $$\mathbf{M}$$ is a real $$m \times n$$ matrix. Then, the singular value decomposition is a factorization of the form
 
 $$\label{eq:svd}
@@ -75,7 +75,7 @@ $$
 
 From this, we see that the SVD of matrix $$\mathbf{M}$$ expresses it as a (nonnegative) linear combination of rank-1 matrices, and we know that number of non-zero terms in such linear combination is equal to the rank of the matrix. 
 
-Geometrically, SVD actually performs very simple and intuitive operations. Firstly, the matrix $$\mathbf{V}^{\text{T}}$$ performs a rotation in $$\mathbb{R}^n$$. Next, the matrix $$\mathbf{\Sigma}$$ simply rescales the rotated vectors by a singular value and appends/deletes dimensions to match the dimension $$m$$ to $$n$$. Finally, the matrix $$\mathbf{U}$$ performs a rotation in $$\mathbb{R}^n$$. In the case of a real $$2\times 2$$ matrix, SVD can be visualized as shown in Figure 2. On the top route, we can see the direct application of a matrix $$\mathbf{M}$$ on two unit vectors. On the bottom route, we can see the action of each matrix in the SVD. We have used a case of a square matrix, as it is easier to visualize (in general, the matrix $$\mathbf{\Sigma}$$ would add or remove dimensions, depending on the form of the matrix $$\mathbf{M}$$). 
+Geometrically, SVD actually performs very simple and intuitive operations. Firstly, the matrix $$\mathbf{V}^{\text{T}}$$ performs a rotation in $$\mathbb{R}^n$$. Next, the matrix $$\mathbf{\Sigma}$$ simply rescales the rotated vectors by a singular value and appends/deletes dimensions to match the dimension $$m$$ to $$n$$. Finally, the matrix $$\mathbf{U}$$ performs a rotation in $$\mathbb{R}^m$$. In the case of a real $$2\times 2$$ matrix, SVD can be visualized as shown in Figure 2. On the top route, we can see the direct application of a matrix $$\mathbf{M}$$ on two unit vectors. On the bottom route, we can see the action of each matrix in the SVD. We have used a case of a square matrix, as it is easier to visualize (in general, the matrix $$\mathbf{\Sigma}$$ would add or remove dimensions, depending on the form of the matrix $$\mathbf{M}$$). 
 
 
 <div class="text-center">
@@ -87,18 +87,18 @@ Figure 2:  _A visual representation of SVD for a $$2\times 2$$ matrix. Adapted f
 We have motivated low-rank approximation methods in the [Rank of a Matrix section](rank_of_matrix), but we haven't discussed how SVD can come in handy for this application. We shall first explain the procedure of using SVD for approximating matrices by their low-rank counterpart and then will show why this approach works. The rank-$$k$$ approximation $$\mathbf{M}_k$$ of the matrix $$\mathbf{M}$$ can be found as follows:
 
 1. We compute the singular value decomposition of the matrix $$\mathbf{M}$$ of the form $$\mathbf{M} = \mathbf{U}\mathbf{\Sigma}\mathbf{V}^{\text{T}}$$. We assume that the matrix the diagonal elements of the matrix $$\mathbf{\Sigma}$$ are sorted from high to low. 
-2. We only keep the first $k$ columns of the matrix $$\mathbf{U}$$, and we denote this matrix as $$\mathbf{U}_k$$ (the shape of the matrix changes from $$m\times m \to m \times k$$). 
+2. We only keep the first $$k$$ columns of the matrix $$\mathbf{U}$$, and we denote this matrix as $$\mathbf{U}_k$$ (the shape of the matrix changes from $$m\times m \to m \times k$$). 
 3. We only keep the first $$k$$ rows of the matrix $$\mathbf{V}^{\text{T}}$$, and we denote this matrix as $$\mathbf{V}^{\text{T}}_k$$ (the shape of the transposed matrix changes from $$n\times n \to k \times n$$). 
 4. We only keep the first $$k$$ singular values (assuming they are ranked from high to low). 
 5. The $$k$$-rank approximation $$\mathbf{M}_k$$ of the matrix $$\mathbf{M}$$ is then given by $$\mathbf{M}_k = \mathbf{U}_k \mathbf{\Sigma}_k \mathbf{V}_k^{\text{T}}$$
 
-Although we have found a consistent way to calculate a $$k$$-rank approximation of an arbitrary matrix, how can we know whether a low-rank approximation using SVD is any good? In order to quantify the _goodness_ of the approximation, let's first how we will measure it. If we treat a matrix $$\mathbf{M}$$ as a vector, then the $$\ell_2$$ norm of it (called the Frobenius norm) is given by:
+Although we have found a consistent way to calculate a $$k$$-rank approximation of an arbitrary matrix, how can we know whether a low-rank approximation using SVD is any good? In order to quantify the _goodness_ of the approximation, let's first determine how we will measure it. If we treat a matrix $$\mathbf{M}$$ as a vector, then the $$\ell_2$$ norm of it (called the Frobenius norm) is given by:
 
 $$
 \|\mathbf{M}\| = \sqrt{\sum_{ij} \text{M}_{ij}^2}
 $$
 
-A good low-rank approximation $$\mathbf{M}_k$$ of the matrix $$\mathbf{M}$$ can then intuitively be defined as the one that minimizes the error quantity $$\varepsilon \equiv \|\mathbf{M}-\mathbf{M}_k \|$$, i.e. an approximation that will resemble the original matrix the most, measured by the Frobenius norm. In fact, it can be shown that given any $k$-rank matrix $$\mathbf{A}_k$$, the following inequality holds:
+A good low-rank approximation $$\mathbf{M}_k$$ of the matrix $$\mathbf{M}$$ can then intuitively be defined as the one that minimizes the error quantity $$\varepsilon \equiv \|\mathbf{M}-\mathbf{M}_k \|$$, i.e. an approximation that will resemble the original matrix the most, measured by the Frobenius norm. In fact, it can be shown that given any $$k$$-rank matrix $$\mathbf{A}_k$$, the following inequality holds:
 
 $$
 \|\mathbf{M}-\mathbf{M}_k \| \leq \|\mathbf{M}-\mathbf{A}_k \|,

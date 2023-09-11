@@ -361,7 +361,7 @@ element of the matrix $$\mathbf{C}$$ is given by:
 $$\boxed{\text{C}_{ij} = \sum_k \text{A}_{ik}\text{B}_{kj}}$$
 
 It is important to note that we used a simple example where both matrices have the same dimensions. A more general case 
-would be if the matrix $$\mathbf{A} \in \mathbb{R}^{n \times k}$ and $\mathbf{B} \in \mathbb{R}^{k \times m}$$. 
+would be if the matrix $$\mathbf{A} \in \mathbb{R}^{n \times k}$$ and $$\mathbf{B} \in \mathbb{R}^{k \times m}$$. 
 Then, the matrix $$\mathbf{B}$$ would take as the input a $$m$$-dimensional vector and transform it to a $$k$$-dimensional vector. 
 Afterward, the matrix $$\mathbf{A}$$ would take as the input the transformed $$k$$-dimensional vector, and output a $$n$$-dimensional 
 vector. So, the total transformation $$\mathbf{C}$$ would be a $$n \times m$$ matrix, i.e. $$\mathbf{C} \in \mathbb{R}^{n\times m}$$. 

@@ -91,9 +91,9 @@ $$
 
 where $$\mathbf{U}$$ is a $$m \times k$$ matrix, and $$\mathbf{V}$$ is a $$n \times k$$ matrix. This way, all column vectors of the matrix $$\mathbf{A}$$ are a linear combination of $$k$$ columns of the matrix $$\mathbf{U}$$[^1]
 
-Now, let's use the result above to see how we can use it in the case of _compression. If the matrix $$\mathbf{A}$$ was a $$m \times n$$ matrix, then in total we have $$m\cdot n$$ entries. On the other hand, if we manage to describe the matrix using matrices $$\mathbf{U}$$ and $$\mathbf{V}$$, then in total, we have $$k\cdot m + k\cdot n = k (m+n)$$ entries. In the case $$m$$ and $$n$$ are large and $$k$$ is small, this approach could save a lot of memory. 
+Now, let's use the result above to see how we can use it in the case of compression. If the matrix $$\mathbf{A}$$ was a $$m \times n$$ matrix, then in total we have $$m\cdot n$$ entries. On the other hand, if we manage to describe the matrix using matrices $$\mathbf{U}$$ and $$\mathbf{V}$$, then in total, we have $$k\cdot m + k\cdot n = k (m+n)$$ entries. In the case $$m$$ and $$n$$ are large and $$k$$ is small, this approach could save a lot of memory. 
 
-It is worth noting that we have only shown that in principle, we could express a matrix in terms of lower-rank matrices, but we haven't shown an exact method to do so. We will return to this question in [this section](rank_of_matrix).
+It is worth noting that we have only shown that in principle, we could express a matrix in terms of lower-rank matrices, but we haven't shown an exact method to do so. We will return to this question in [this section](matrix_decomp).
 
 {:. .summary}
 The rank of a matrix is a measure of its nondegenerateness, denoting the dimension of the vector space spanned by its row/column vectors, and therefore it corresponds to the number of linearly independent row/column vectors of the matrix. The rank of a matrix is important in determining its properties, such as invertibility, and can be used in low-rank matrix approximations for compression, de-noising and other various purposes.

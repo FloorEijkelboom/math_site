@@ -26,7 +26,11 @@ $$\mathbf{d_1} =  \begin{bmatrix}
 
 The two bases are visualized in the figure below.
 
-**add**
+<div class="text-center">
+  <img src="../figures/linalg/basis/change_of_basis.png" alt="Caption of the figure." width="45%" id="fig:svd_matrices">
+</div>
+
+Figure 1:  _A visual representation of two basis $$\{ \mathbf{b_1}, \mathbf{b_2}\}$$ and $$\{\mathbf{d_1}, \mathbf{d_2}\}$$._
 
 
 We can think of a basis as a language we use to explicitly write vectors and operators as matrices. However, the way an 

@@ -80,7 +80,7 @@ We will first describe some important properties of orthogonal matrices and then
 $$
 
 
-- The determinant of the orthogonal matrices is equal to $1$ or $-1$.
+- The determinant of the orthogonal matrices is equal to $$1$$ or $$-1$$.
 
 {: .proof}
 >Let's assume that we have an orthogonal matrix $$\mathbf{Q}$$. Now, lets find the determinant of the the matrix $$\mathbf{Q}\mathbf{Q}^{\text{T}}$$:
@@ -125,7 +125,7 @@ $$
 
 - Column/rows of the orthogonal matrix form an orthonormal basis of the Euclidean space $$\mathbb{R}^n$$. 
 
-With these properties in mind, we can conclude that orthogonal matrices are rotations (in this case the determinant is $$1$$) or reflections (in this case the determinant is $$1$$). Intuitively, if the transformation doesn't change the norm of the vector, this means that the vector is simply rotated or reflected, rather than also scaled. 
+With these properties in mind, we can conclude that orthogonal matrices are rotations (in this case the determinant is $$1$$) or reflections (in this case the determinant is $$-1$$). Intuitively, if the transformation doesn't change the norm of the vector, this means that the vector is simply rotated or reflected, rather than also scaled. 
 
 ## Unitary matrix
 Similarly to the orthogonal matrix, the complex square matrix $$\mathbf{U}$$ is said to be unitary if the following holds:

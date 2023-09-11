@@ -53,7 +53,7 @@ and $$\lambda$$ that satisfy it. For example, the $$m$$-th equation is given by:
 $$\text{A}_{m1} v_1 + \cdots + \left(\text{A}_{mm}-\lambda\right) v_m + \cdots + \text{A}_{mn}v_n = 0.$$
 
 What we can see is that in every equation, we have all the unknowns (elements of the vector $$\mathbf{v}$$). 
-Therefore, if the equations are not linearly independent[^1], the only solution is the trivial one, i.e. 
+Therefore, if the equations are linearly independent[^1], the only solution is the trivial one, i.e. 
 $$v_1 = v_2 = \cdots = v_n = 0$$. Although this is a plausible solution, it is not very informative, 
 as it just tells us that if we take a null vector and apply an arbitrary transformation, it will remain a null vector, 
 which is a trivial statement. 
